@@ -21,6 +21,9 @@ class App extends Component {
         <div className="list-content">
           <div className="list">
             <h3 className="list-title">Burgers bar</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"></path>
+            </svg>
             <input type="text" placeholder="Bar location"/>
             <button className="filter">Filter</button>
             <ol className="burgers-list">
