@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import Hamburger from './Hamburger';
 
 import GoogleMaps from "./GoogleMaps";
 
@@ -9,7 +10,8 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h1 className="App-title">Neighborhood Map</h1>
+        <Hamburger/>
+      
         </div>
 
         
@@ -21,9 +23,7 @@ class App extends Component {
         <div className="list-content">
           <div className="list">
             <h3 className="list-title">Burgers bar</h3>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"></path>
-            </svg>
+  
             <input type="text" placeholder="Bar location"/>
             <button className="filter">Filter</button>
             <ol className="burgers-list">

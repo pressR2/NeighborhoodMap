@@ -9,8 +9,8 @@ class GoogleMaps extends React.Component {
 
     render() {
         const styles = {
-            width: '100px',
-            height: '100px'
+            width: '100%',
+            height: '400px'
         };
         return (
             <div id='map' style={styles}></div>
@@ -32,7 +32,7 @@ const initMap = function() {
 
 
     let ourMap = new window.google.maps.Map(document.getElementById('map'), {
-        center: {lat: 40.7413549, lng: -73.9980244},
+        center: {lat: 51.126858, lng: 16.986331},
         zoom:13
     })
 }
