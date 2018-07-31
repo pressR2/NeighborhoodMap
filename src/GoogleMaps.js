@@ -8,17 +8,12 @@ class GoogleMaps extends React.Component {
     }
 
     render() {
-        const styles = {
-            width: '100%',
-            height: '400px'
-        };
+      
         return (
-            <div id='map' style={styles}></div>
+            <div id='map'></div>
         )   
     }
 }
-
-// const apiKey = 'AIzaSyADMO5nZRIo1qyxLxlV1UAeTtEtr6osOuw';
 
 const loadScript = function(src) {
   var tag = document.createElement('script');
@@ -30,10 +25,9 @@ const loadScript = function(src) {
 const initMap = function() {
 
 
-
     let ourMap = new window.google.maps.Map(document.getElementById('map'), {
         center: {lat: 51.126858, lng: 16.986331},
-        zoom:13
+        zoom:15
     })
 }
 

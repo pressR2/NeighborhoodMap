@@ -1,14 +1,14 @@
 html,
 body,
+#menu
    {
   height: 100%;
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
 .App {
-  text-align: center;
+  height: 100vh;
 }
 
 .App-header {
@@ -22,14 +22,66 @@ body,
 }
 
 .header-menu {
-  
-    padding: 11px;
-    width: 32px;
-    fill: #02b3e4;
+  padding: 11px;
+  width: 32px;
+  fill: #02b3e4;
 }
 
+.burgers-list {
+  list-style-type: none;
+  text-align: left;
+  padding-left: 15px;
+  line-height: 2.6;
+  font-size: 15px;
+}
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.list-title {
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.input-width {
+  max-width: 70%;
+  height: 19px;
+}
+
+.filter {
+  height: 25px;
+  width: 56px;
+}
+
+#menu {
+  z-index: 10;
+  width: 200px;
+  height: 100%;
+  position: absolute;
+  background-color: black;
+  color: #7d97ad;
+  transform: translate(-280px,0);
+  transition: transform 0.3s ease;
+}
+
+#menu.open {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.map-container {
+  align-self: stretch;
+  width: 100%;
+  height: 100%;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
 }
