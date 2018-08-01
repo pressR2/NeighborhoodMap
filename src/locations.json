@@ -1,0 +1,66 @@
+[
+    {
+        "name": "Ostrów Tumski",
+        "location": {
+        "lat": 51.114463,
+        "lng": 17.046734
+        },
+        "url": "https://pl.wikipedia.org/wiki/Ostr%C3%B3w_Tumski_we_Wroc%C5%82awiu"
+    },
+    {
+        "name": "Ogród Zoologiczny we Wrocławiu",
+        "location": {
+        "lat": 51.104126,
+        "lng": 17.074197
+        },
+        "url": "https://pl.wikipedia.org/wiki/Ogr%C3%B3d_Zoologiczny_we_Wroc%C5%82awiu"
+    },
+    {
+        "name": "Hala Stulecia",
+        "location": {
+        "lat": 51.106895,
+        "lng": 17.07372
+        },
+        "url": "https://pl.wikipedia.org/wiki/Hala_Stulecia_we_Wroc%C5%82awiu"
+    },
+    {
+        "name": "Wyspa Słodowa",
+        "location": {
+        "lat": 51.116109,
+        "lng": 17.03752
+        },
+        "url": "https://pl.wikipedia.org/wiki/Wyspa_S%C5%82odowa"
+    },
+    {
+        "name": "Ogród Botaniczny Uniwersytetu Wrocławskiego",
+        "location": {
+        "lat": 51.116754,
+        "lng": 17.047491
+        },
+        "url": "https://pl.wikipedia.org/wiki/Ogr%C3%B3d_Botaniczny_Uniwersytetu_Wroc%C5%82awskiego"
+    },
+    {
+        "name": "Ogród Japoński we Wrocławiu",
+        "location": {
+        "lat": 51.10966,
+        "lng": 17.079045
+        },
+        "url": "https://pl.wikipedia.org/wiki/Ogr%C3%B3d_Japo%C5%84ski_we_Wroc%C5%82awiu"
+    },
+    {
+        "name": "Panorama Racławicka",
+        "location": {
+        "lat": 51.110129,
+        "lng": 17.044343
+        },
+        "url": "https://pl.wikipedia.org/wiki/Panorama_Rac%C5%82awicka"
+    },
+    {
+        "name": "Rynek we Wrocławiu",
+        "location": {
+        "lat": 51.109454,
+        "lng": 17.031332
+        },
+        "url": "https://pl.wikipedia.org/wiki/Rynek_we_Wroc%C5%82awiu"
+    }
+]
