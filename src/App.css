@@ -19,9 +19,9 @@ body,
   height: 50px;
 }
 
-.App-intro {
+/*.App-intro {
   font-size: large;
-}
+}*/
 
 .header-menu {
   padding: 11px;
@@ -29,21 +29,23 @@ body,
   fill: #02b3e4;
 }
 
-.burgers-list {
+.list {
   list-style-type: none;
   text-align: left;
   padding-left: 15px;
-  line-height: 2.6;
-  font-size: 15px;
+  line-height: 3;
+  font-size: 16px;
 }
 
 .list-title {
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 1px;
   text-align: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
-.input-width {
+#filter-location {
   max-width: 70%;
   height: 19px;
 }
@@ -59,7 +61,7 @@ body,
   height: 100%;
   position: absolute;
   background-color: black;
-  color: #7d97ad;
+  color: #bfbfbf;
   transform: translate(-200px,0);
   transition: transform 0.3s ease;
 }
@@ -82,7 +84,7 @@ body,
 .wrapper {
   width: 100%;
   height: 100%;
-  display: flex;
+/*  display: flex;
   flex-flow: row nowrap;
-  align-items: stretch;
+  align-items: stretch;*/
 }

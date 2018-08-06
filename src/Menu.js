@@ -1,33 +1,36 @@
 import React from "react";
-import * as data from "./locations.json";
-
 
 class Menu extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleFilter = this.handleFilter.bind(this);
+    }
     state = {
-        locations: data,
         list: []
     };
 
+    handleFilter() {
+        var input = document.getElementById("filter-location").value;
+        this.props.search(input);
+    }
+
     render() {
-        for (var i = 0; i < this.state.locations.length; i++) {
-            var title = this.state.locations[i].name;
+        this.state.list = [];
+        for (let i = 0; i < this.props.places.length; i++) {
+            var title = this.props.places[i].name;
             this.state.list.push(<li>{title}</li>);
         }
 
-
         return (
-            <div id ="menu">        
-                
-                <h3 className="list-title">Must see in Wrocław</h3>
-                <input className="input-width" type="text" placeholder="Filter location" />
-                <button className="filter">Filter</button>
-                <ol className="burgers-list">
-
-                    {this.state.list}
-                
-                </ol>            
-        </div>
-        )
+            <div id="menu">
+                <h3 className="list-title">Visit in Wroclaw</h3>
+                <input id="filter-location" type="text" placeholder="Filter location" />
+                <button className="filter" onClick={this.handleFilter}>
+                    Filter
+                </button>
+                <ol className="list">{this.state.list}</ol>
+            </div>
+        );
     }
 }
 

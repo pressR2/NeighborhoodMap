@@ -1,6 +1,6 @@
 [
     {
-        "name": "Ostrów Tumski",
+        "name": "Cathedral Island",
         "title":"Ostr%C3%B3w_Tumski,_Wroc%C5%82aw",
         "location": {
         "lat": 51.114463,
@@ -8,56 +8,56 @@
         }    
     },
     {
-        "name": "Ogród Zoologiczny",
-        "title": "Ogr%C3%B3d_Zoologiczny_we_Wroc%C5%82awiu",
+        "name": "Zoological Garden",
+        "title":"Wroc%C5%82aw_Zoo",
         "location": {
         "lat": 51.104126,
         "lng": 17.074197
         }  
     },
     {
-        "name": "Hala Stulecia",
-        "title": "Hala_Stulecia_we_Wroc%C5%82awiu",
+        "name": "Centennial Hall",
+        "title": "Centennial_Hall",
         "location": {
-        "lat": 51.106895,
-        "lng": 17.07372
+        "lat": 51.106869,
+        "lng": 17.077285 
         }   
     },
     {
-        "name": "Wyspa Słodowa",
-        "title":"Wyspa_S%C5%82odowa",
+        "name": "Słodowa Island",
+        "title":"S%C5%82odowa_Island",
         "location": {
         "lat": 51.116109,
         "lng": 17.03752
         }      
     },
     {
-        "name": "Ogród Botaniczny",
-        "title": "Ogr%C3%B3d_Botaniczny_Uniwersytetu_Wroc%C5%82awskiego",
+        "name": "Museum of Architecture",
+        "title": "Museum_of_Architecture,_Wroc%C5%82aw",
         "location": {
-        "lat": 51.116754,
-        "lng": 17.047491
+        "lat": 51.109618,
+        "lng": 17.042419
         }        
     },
     {
-        "name": "Ogród Japoński",
-        "title": "Ogr%C3%B3d_Japo%C5%84ski_we_Wroc%C5%82awiu",
+        "name": "Grunwald Squar",
+        "title": "Plac_Grunwaldzki,_Wroc%C5%82aw",
         "location": {
-        "lat": 51.10966,
-        "lng": 17.079045
+        "lat": 51.111676,
+        "lng": 17.06051
         }       
     },
     {
-        "name": "Panorama Racławicka",
-        "title": "Panorama_Rac%C5%82awicka",
+        "name": "Racławice Panorama",
+        "title": "Rac%C5%82awice_Panorama",
         "location": {
         "lat": 51.110129,
         "lng": 17.044343
         }        
     },
     {
-        "name": "Rynek",
-        "title": "Rynek_we_Wroc%C5%82awiu",
+        "name": "Market Square",
+        "title": "Market_Square,_Wroc%C5%82aw",
         "location": {
         "lat": 51.109454,
         "lng": 17.031332
