@@ -22,8 +22,10 @@ class InfoWindow extends React.Component {
             return response.json();
         }).then((data) => {
             let parser = new HtmlToReactParser()
-            let parsedHtml = parser.parse(data.query.pages["0"].extract)
-            this.setState({content: parsedHtml})
+            if (data.query !== undefined) {
+                let parsedHtml = parser.parse(data.query.pages["0"].extract)
+                this.setState({content: parsedHtml})                
+            }
         }).catch(function(err) {
             console.log("catch fetch error");
             console.log(err);

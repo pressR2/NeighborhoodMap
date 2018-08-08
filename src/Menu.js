@@ -5,22 +5,20 @@ class Menu extends React.Component {
         super(props);
         this.handleFilter = this.handleFilter.bind(this);
     }
-    state = {
-        list: []
-    };
 
     handleFilter() {
         var input = document.getElementById("filter-location").value;
         this.props.search(input);
     }
 
+
     render() {
-        this.state.list = [];
+        let list = [];
         for (let i = 0; i < this.props.places.length; i++) {
             var name = this.props.places[i].name;
             let f = this.props.handleClick
 
-            this.state.list.push(<li onClick={(function(title){
+            list.push(<li key = {i} onClick={(function(title){
                 return function() {
                     f(title)
                 }
@@ -34,7 +32,7 @@ class Menu extends React.Component {
                 <button className="filter" onClick={this.handleFilter}>
                     Filter
                 </button>
-                <ol className="list">{this.state.list}</ol>
+                <ol className="list">{list}</ol>
             </div>
         );
     }
