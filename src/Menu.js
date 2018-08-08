@@ -17,8 +17,14 @@ class Menu extends React.Component {
     render() {
         this.state.list = [];
         for (let i = 0; i < this.props.places.length; i++) {
-            var title = this.props.places[i].name;
-            this.state.list.push(<li>{title}</li>);
+            var name = this.props.places[i].name;
+            let f = this.props.handleClick
+
+            this.state.list.push(<li onClick={(function(title){
+                return function() {
+                    f(title)
+                }
+            })(this.props.places[i].title)}>{name}</li>);
         }
 
         return (

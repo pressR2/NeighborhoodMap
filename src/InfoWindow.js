@@ -1,5 +1,5 @@
 import React from "react";
-var parseInfo = require("infobox-parser")
+var HtmlToReactParser = require('html-to-react').Parser;
 
 class InfoWindow extends React.Component {
     constructor(props) {
@@ -7,18 +7,24 @@ class InfoWindow extends React.Component {
         this.getInfo = this.getInfo.bind(this);
     }
 
+    state = {
+        content: ''
+    }
+
     getInfo() {
-        var url = "https://en.wikipedia.org/w/api.php?action=query&titles=" + this.props.filterQuery + "&prop=revisions&rvprop=content&format=json&formatversion=2&origin=*";
-                 
+        var url = "https://en.wikipedia.org/w/api.php?action=query&titles=" + this.props.filterQuery + "&prop=extracts&exintro=1&rvprop=content&format=json&formatversion=2&origin=*";
 
         fetch(url, {
             headers:
                 {'Accept': 'application/json'},
         }).then(function(response) {
-            console.log(response)
+            // console.log(response)
             return response.json();
-        }).then(function(data) {
-            console.log(data)
+        }).then((data) => {
+            // console.log(data)
+            let parser = new HtmlToReactParser()
+            let parsedHtml = parser.parse(data.query.pages["0"].extract)
+            this.setState({content: parsedHtml})
             // console.log(data.query.pages[0])
             // let wikitext = Object.keys.data.query.pages[0].revisions[0].content
             // let parsedWiki = parseInfo(wikitext)
@@ -43,7 +49,9 @@ class InfoWindow extends React.Component {
 
     render() {
         return (
-            <div id="infoWindow" />
+            <div id="infoWindow" >
+                {this.state.content}
+            </div>
             )
     }
 

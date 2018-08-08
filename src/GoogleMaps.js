@@ -29,11 +29,11 @@ class GoogleMaps extends React.Component {
 
         for (var i = 0; i < this.props.places.length; i++) {
             var position = this.props.places[i].location;
-            var title = this.props.places[i].name;
             var marker = new window.google.maps.Marker({
                 position: position,
                 map: newMap,
-                title: this.props.places[i].title,
+                title: this.props.places[i].name,
+                wikiQueryPart: this.props.places[i].title,
                 animation: window.google.maps.Animation.DROP,
                 id: i
             });
@@ -48,7 +48,7 @@ class GoogleMaps extends React.Component {
 
             marker.addListener("click", (function(marker) {
                 return function() {
-                    f(marker.title)
+                    f(marker.wikiQueryPart)
                 }
             }(marker)));
 
@@ -63,7 +63,7 @@ class GoogleMaps extends React.Component {
     componentDidUpdate() {
         this.state.markers.forEach(marker => {
             // console.log(this.props.places) 
-        var foundPlaces = this.props.places.filter(place => place.title === marker.title);
+        var foundPlaces = this.props.places.filter(place => place.title === marker.wikiQueryPart);
        
         
         if (marker.map !== undefined) {

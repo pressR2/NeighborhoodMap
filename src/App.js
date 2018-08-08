@@ -46,7 +46,7 @@ class App extends Component {
                 </div>
 
                 <div className="wrapper">
-                    <Menu places={searchLocation} search={this.filterSearch}  />
+                    <Menu places={searchLocation} search={this.filterSearch} handleClick={this.handleShowInfoWindow} />
                     <div className="map-container">
                         <GoogleMaps places={searchLocation} handleClick={this.handleShowInfoWindow}/>
                         <InfoWindow filterQuery = {this.state.infoWindowQuery}/>
