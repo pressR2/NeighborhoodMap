@@ -17,16 +17,18 @@ class App extends Component {
     state = {
         locations: data,
         filterBy: "",
-        infoWindowQuery: ""
+        infoWindowQuery: "",
+        filteredLocations: data
     };
 
     filterLocations(locationName) {
-        return this.state.locations.filter(location => location.name === locationName || locationName === "");
+        return this.state.locations.filter(location => location.name.includes(locationName) || locationName === "");
     }
 
-    filterSearch(param) {
-        this.setState({ filterBy: param });
-        // list = "";
+    filterSearch(filterQuery) {
+        let searchLocation = this.filterLocations(filterQuery);
+        this.setState({filteredLocations: searchLocation})
+        // this.setState({ filterBy: param });
     }
 
     handleShowInfoWindow(title) {
@@ -36,9 +38,7 @@ class App extends Component {
     }
 
     render() {
-        let searchLocation = this.filterLocations(this.state.filterBy);
-        console.log(this.state.infoWindowQuery)
-        console.log(searchLocation);
+        
         return (
             <div className="App">
                 <div className="App-header">
@@ -46,9 +46,9 @@ class App extends Component {
                 </div>
 
                 <div className="wrapper">
-                    <Menu places={searchLocation} search={this.filterSearch} handleClick={this.handleShowInfoWindow} />
+                    <Menu places={this.state.filteredLocations} search={this.filterSearch} handleClick={this.handleShowInfoWindow} />
                     <div className="map-container">
-                        <GoogleMaps places={searchLocation} handleClick={this.handleShowInfoWindow}/>
+                        <GoogleMaps places={this.state.filteredLocations} handleClick={this.handleShowInfoWindow} animateMarker={this.state.infoWindowQuery}/>
                         <InfoWindow filterQuery = {this.state.infoWindowQuery}/>
                     </div>
                 </div>

@@ -21,15 +21,9 @@ class InfoWindow extends React.Component {
             // console.log(response)
             return response.json();
         }).then((data) => {
-            // console.log(data)
             let parser = new HtmlToReactParser()
             let parsedHtml = parser.parse(data.query.pages["0"].extract)
             this.setState({content: parsedHtml})
-            // console.log(data.query.pages[0])
-            // let wikitext = Object.keys.data.query.pages[0].revisions[0].content
-            // let parsedWiki = parseInfo(wikitext)
-            // console.log(parsedWiki)
-
         }).catch(function(err) {
             console.log("catch fetch error");
             console.log(err);
