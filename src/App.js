@@ -5,6 +5,8 @@ import GoogleMaps from "./GoogleMaps";
 import Menu from "./Menu";
 import * as data from "./locations.json";
 import InfoWindow from "./InfoWindow";
+import { Route } from "react-router-dom";
+
 
 class App extends Component {
     constructor(props) {
@@ -38,20 +40,34 @@ class App extends Component {
     }
 
     render() {
-        
+        console.log("infoWindowQuery:" + this.state.infoWindowQuery)
         return (
             <div className="App">
-                <div className="App-header">
-                    <Hamburger />
-                </div>
+                <Route 
+                    exact 
+                    path="/" 
+                    render = {() => {
+                        return (
+                        <div className="Main">
+                            <div className="App-header">
+                                <Hamburger />
+                            </div>
+                            <Menu places={this.state.filteredLocations} search={this.filterSearch} handleClick={this.handleShowInfoWindow} /> 
+                            <div className="map-container">
+                                <GoogleMaps places={this.state.filteredLocations} handleClick={this.handleShowInfoWindow} animateMarker={this.state.infoWindowQuery}/>
+                            </div>                    
+                        </div>  
+                        ) 
+                }} />
+                <Route 
+                    path="/search" 
+                    render = {() => {
+                        return (
+                            <InfoWindow filterQuery = {this.state.infoWindowQuery} />                            
+                            )
+                    }}
 
-                <div className="wrapper">
-                    <Menu places={this.state.filteredLocations} search={this.filterSearch} handleClick={this.handleShowInfoWindow} />
-                    <div className="map-container">
-                        <GoogleMaps places={this.state.filteredLocations} handleClick={this.handleShowInfoWindow} animateMarker={this.state.infoWindowQuery}/>
-                        <InfoWindow filterQuery = {this.state.infoWindowQuery}/>
-                    </div>
-                </div>
+                />
             </div>
         );
     }

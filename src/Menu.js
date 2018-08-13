@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Menu extends React.Component {
     constructor(props) {
@@ -18,11 +19,16 @@ class Menu extends React.Component {
             var name = this.props.places[i].name;
             let f = this.props.handleClick
 
-            list.push(<li key = {i} onClick={(function(title){
+            list.push(
+            <li className = "list-item" key = {i} onClick={(function(title){
                 return function() {
-                    f(title)
+                        f(title)
                 }
-            })(this.props.places[i].title)}>{name}</li>);
+                })(this.props.places[i].title)}>
+                <Link to="/search">
+                    {name}
+                </Link>
+            </li>);
         }
 
         return (

@@ -52,6 +52,7 @@ class GoogleMaps extends React.Component {
                     if (marker.getAnimation() !== null) {                        
                     } else {                        
                         marker.setAnimation(window.google.maps.Animation.BOUNCE)
+                        
                     }
                     setTimeout(function () {
                         marker.setAnimation(null)  

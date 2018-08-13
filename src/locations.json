@@ -1,10 +1,10 @@
 [
     {
-        "name": "Cathedral Island",
-        "title":"Ostr%C3%B3w_Tumski,_Wroc%C5%82aw",
+        "name": "Tumski Bridge",
+        "title":"Tumski_Bridge",
         "location": {
-        "lat": 51.114463,
-        "lng": 17.046734
+        "lat": 51.114715,
+        "lng": 17.042235
         }    
     },
     {
@@ -40,7 +40,7 @@
         }        
     },
     {
-        "name": "Grunwald Squar",
+        "name": "Grunwald Square",
         "title": "Plac_Grunwaldzki,_Wroc%C5%82aw",
         "location": {
         "lat": 51.111676,

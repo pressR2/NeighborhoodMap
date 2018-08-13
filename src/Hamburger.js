@@ -4,6 +4,11 @@ import React from "react";
     function openMenu(e) {    
         var menu = document.getElementById('menu');
         menu.classList.toggle('open');
+        var infoWindow = document.getElementById('infoWindow');
+        if (infoWindow !== null) {
+            infoWindow.classList.toggle('open');    
+        }
+        
         e.stopPropagation();
     }
 

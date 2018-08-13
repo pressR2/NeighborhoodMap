@@ -13,7 +13,7 @@ class InfoWindow extends React.Component {
 
     getInfo() {
         var url = "https://en.wikipedia.org/w/api.php?action=query&titles=" + this.props.filterQuery + "&prop=extracts&exintro=1&rvprop=content&format=json&formatversion=2&origin=*";
-
+        console.log("query " + this.props.filterQuery)
         fetch(url, {
             headers:
                 {'Accept': 'application/json'},
@@ -21,6 +21,7 @@ class InfoWindow extends React.Component {
             // console.log(response)
             return response.json();
         }).then((data) => {
+            console.log(data)
             let parser = new HtmlToReactParser()
             if (data.query !== undefined) {
                 let parsedHtml = parser.parse(data.query.pages["0"].extract)
@@ -44,10 +45,17 @@ class InfoWindow extends React.Component {
     }
 
     render() {
-        return (
-            <div id="infoWindow" >
+        var infoContent = (
+            <div id="infoWindow">
+                <h4>From Wikipedia</h4>
+                <hr></hr>
                 {this.state.content}
-            </div>
+            </div>)
+        if (this.state.content !== '') {
+            return infoContent;
+        }
+        return (
+            <div id="infoWindow"></div>        
             )
     }
 
