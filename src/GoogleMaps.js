@@ -108,7 +108,7 @@ class GoogleMaps extends React.Component {
                 marker.setAnimation(null)  
             }, 1250);
         })
-        return <div id="map" />;
+        return <div id="map" role="application" />;
 
     }
 }

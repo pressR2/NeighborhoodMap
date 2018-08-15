@@ -48,24 +48,20 @@ class InfoWindow extends React.Component {
 
     render() {
         var infoContent = (
-            <div id="infoWindow">
-            <div className="infoHeader">
-                <h4>From Wikipedia</h4>
-                <Link className="close-search" to="/">
-                    Close
-                </Link>
-            </div>
+            <article id="infoWindow">
+                <header className="infoHeader">
+                    <h4>From Wikipedia</h4>
+                    <Link className="close-search" to="/">
+                        Close
+                    </Link>
+                </header>
                 <hr></hr>
               
                 {this.state.content}
-            </div>)
-        if (this.state.content !== '') {
-            return infoContent;
-        }
+            </article>)
+
         return (
-            <div id="infoWindow">
-            
-            </div>      
+            this.state.content !== '' ? infoContent : (null)
             )
     }
 

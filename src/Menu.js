@@ -32,14 +32,14 @@ class Menu extends React.Component {
         }
 
         return (
-            <div id="menu">
-                <h3 className="list-title">Visit in Wroclaw</h3>
-                <input id="filter-location" type="text" placeholder="Filter location" />
+            <section id="menu">
+                <h3 className="menu-title">Visit in Wroclaw</h3>
+                <input id="filter-location" type="text" placeholder="Filter location" aria-label="filter query"/>
                 <button className="filter" onClick={this.handleFilter}>
                     Filter
                 </button>
-                <ol className="list">{list}</ol>
-            </div>
+                <ul className="list">{list}</ul>
+            </section>
         );
     }
 }

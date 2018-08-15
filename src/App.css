@@ -9,6 +9,15 @@ body,
   padding: 0;
 }
 
+input, button {
+  margin: 0;
+  border: 0;
+
+  -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+     -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
+          box-sizing: border-box;
+}
+
 .Main {
   height: 100vh;
 }
@@ -21,7 +30,7 @@ body,
   align-items: center;
 }
 
-.header-menu {
+.drawer-control {
   padding-left: 11px;
   width: 32px;
   fill: #02b3e4;
@@ -45,7 +54,7 @@ body,
  text-decoration: none;
 }
 
-.list-title {
+.menu-title {
   font-size: 16px;
   letter-spacing: 1px;
   text-align: center;
@@ -54,13 +63,16 @@ body,
 }
 
 #filter-location {
-  max-width: 70%;
-  height: 19px;
+  width: 70%;
+  height: 25px;
+  padding-left: 3px;
+
 }
 
 .filter {
   height: 25px;
-  width: 79px;
+  width: 30%;
+
 }
 
 #menu {
