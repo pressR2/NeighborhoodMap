@@ -76,7 +76,7 @@ class GoogleMaps extends React.Component {
     componentDidMount() {
         window.initMap = this.initMap;
         if (firstLoad) {
-            loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDWGkqpNu4mZAh80NZrhQnVsbAHxj-AzCE&callback=initMap");
+            loadScript("https://aps.googleapis.com/maps/api/js?key=AIzaSyDWGkqpNu4mZAh80NZrhQnVsbAHxj-AzCE&callback=initMap");
         } else {
             this.initMap()
         }
@@ -117,6 +117,14 @@ const loadScript = function(src) {
     var tag = document.createElement("script");
     tag.async = true;
     tag.src = src;
+    tag.onerror = function() {
+        var map = document.getElementById("map")
+        if (map != null) {
+            var text = document.createTextNode("Google Maps error");
+            map.appendChild(text)
+        }
+    }
+
     document.getElementsByTagName("body")[0].appendChild(tag);
 };
 

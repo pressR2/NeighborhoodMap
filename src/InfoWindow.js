@@ -29,15 +29,12 @@ class InfoWindow extends React.Component {
                 let parsedHtml = parser.parse(data.query.pages["0"].extract)
                 this.setState({content: parsedHtml})                
             }
-        }).catch(function(err) {
-            console.log("catch fetch error");
+        }).catch((err) => {
             console.log(err);
+            let errorContent = (<span>Wikipedia fetch error</span>)
+            this.setState({content: errorContent})
         });
 
-    }
-
-    componentDidMount() {
-        this.getInfo();
     }
      
     componentDidUpdate(prevProps) {
