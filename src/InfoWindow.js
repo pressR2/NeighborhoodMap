@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 var HtmlToReactParser = require('html-to-react').Parser;
 
 class InfoWindow extends React.Component {
@@ -47,15 +49,23 @@ class InfoWindow extends React.Component {
     render() {
         var infoContent = (
             <div id="infoWindow">
+            <div className="infoHeader">
                 <h4>From Wikipedia</h4>
+                <Link className="close-search" to="/">
+                    Close
+                </Link>
+            </div>
                 <hr></hr>
+              
                 {this.state.content}
             </div>)
         if (this.state.content !== '') {
             return infoContent;
         }
         return (
-            <div id="infoWindow"></div>        
+            <div id="infoWindow">
+            
+            </div>      
             )
     }
 

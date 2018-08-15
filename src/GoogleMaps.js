@@ -1,11 +1,12 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
+
+let firstLoad = true
 
 class GoogleMaps extends React.Component {
     constructor(props) {
         super(props);
-
         this.initMap = this.initMap.bind(this);
-
     }
 
     state = {
@@ -25,9 +26,12 @@ class GoogleMaps extends React.Component {
         this.setState({
             map: newMap
         })
-
+       
         let newMarkers = []
-
+        let anim = window.google.maps.Animation.DROP
+        if (firstLoad === false) {
+            anim = null
+        }
         for (var i = 0; i < this.props.places.length; i++) {
             var position = this.props.places[i].location;
             var marker = new window.google.maps.Marker({
@@ -36,7 +40,7 @@ class GoogleMaps extends React.Component {
                 title: this.props.places[i].name,
                 wikiQueryPart: this.props.places[i].title,
                 id: i,
-                animation: window.google.maps.Animation.DROP
+                animation: anim
             });
 
             newMarkers.push(marker);
@@ -46,8 +50,9 @@ class GoogleMaps extends React.Component {
             })
 
             let f = this.props.handleClick
-            marker.addListener("click", (function(marker) {
+            marker.addListener("click", (function(marker, history) {
                 return function() {
+                    console.log("marker.wikiQueryPart" + marker.wikiQueryPart)
                     f(marker.wikiQueryPart)     
                     if (marker.getAnimation() !== null) {                        
                     } else {                        
@@ -55,17 +60,26 @@ class GoogleMaps extends React.Component {
                         
                     }
                     setTimeout(function () {
-                        marker.setAnimation(null)  
-                    }, 1250);   
+                        marker.setAnimation(null)
+                        history.push("/search")
+                    }, 1250);
                 }
-            }(marker)));
+            }(marker, this.props.history)));
 
+
+// this also works with react-router-native
         }
+
+        firstLoad = false
     }
 
     componentDidMount() {
         window.initMap = this.initMap;
-        loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDWGkqpNu4mZAh80NZrhQnVsbAHxj-AzCE&callback=initMap");
+        if (firstLoad) {
+            loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDWGkqpNu4mZAh80NZrhQnVsbAHxj-AzCE&callback=initMap");
+        } else {
+            this.initMap()
+        }
     }
 
     componentDidUpdate(prevProps) {
@@ -106,4 +120,4 @@ const loadScript = function(src) {
     document.getElementsByTagName("body")[0].appendChild(tag);
 };
 
-export default GoogleMaps;
+export default withRouter(GoogleMaps);

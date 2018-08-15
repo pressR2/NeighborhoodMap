@@ -1,6 +1,6 @@
 html,
 body,
-#menu
+#root
    {
   height: 100%;
   width: 100%;
@@ -16,15 +16,13 @@ body,
 .App-header {
   background-color: #252831;
   width:100%;
-  height: 50px;
+  height: 5vh;
+  display: flex;
+  align-items: center;
 }
 
-/*.App-intro {
-  font-size: large;
-}*/
-
 .header-menu {
-  padding: 11px;
+  padding-left: 11px;
   width: 32px;
   fill: #02b3e4;
 }
@@ -37,16 +35,22 @@ body,
   font-size: 16px;
 }
 
-.list-item:hover {
+.list-item a:hover {
   color: white;
+
+}
+
+.list-item a {
+ color: #b0b5b7;
+ text-decoration: none;
 }
 
 .list-title {
   font-size: 16px;
   letter-spacing: 1px;
   text-align: center;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 #filter-location {
@@ -62,7 +66,7 @@ body,
 #menu {
   z-index: 10;
   width: 252px;
-  height: 100%;
+  height: 95vh;
   position: absolute;
   background-color: black;
   color: #b0b5b7;
@@ -76,9 +80,9 @@ body,
 }
 
 .map-container {
-  align-self: stretch;
+  /*align-self: stretch;*/
   width: 100%;
-  height: 100%;
+  height: 95vh;
 }
 
 #map {
@@ -86,36 +90,93 @@ body,
 }
 
 #infoWindow {
-  height: 50%;
-  width: 250px;
-  position: fixed;
-/*  position: absolute;*/
-  z-index: 10;
-  /*color: #f9cb5e;*/
-  color: white;
-  bottom: 0;
- /* left: ;*/
-  overflow: auto;
-  background: black;
-  font-size: 14px;
-  line-height: 1.4;
+  margin: 5px 16px 5px 16px;
+  line-height: 1.5;
   font-family: Arial, Helvetica, sans-serif;
-  padding-left: 2px;
-  transform: translate(-252px,0);
-  transition: transform 0.3s ease;
-}
-
-#infoWindow.open {
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
+/*  border-radius: 15px 0;*/
+/*  border: 1px solid black;*/
+  /*border-width: 1px;*/
+  /*border-width: 5px;*/
 }
 
 #infoWindow b {
-  color:#f9cb5e;
+ /* color:#f9cb5e;*/
+ color:#0077b3;
 }
 
 #infoWindow h4 {
-  margin: 12px 14px;
+  margin: 10px 14px;
+  color: black;
+}
+
+#infoWindow p {
+  text-align: justify;
 }
 
 
+.close-search {
+  width: 40px;
+  height: 40px;
+  background: white;
+  background-image: url('./icons/arrow-back.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28px;
+  font-size: 0;
+  margin-left: auto;
+}
+
+.infoHeader {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+@media screen and (min-width: 585px) {
+  #infoWindow {
+    bottom: 0;
+    z-index: 10;
+    width: 244px;
+    height: 45%;
+    overflow: auto;
+    background: white;
+    color: black;
+    padding: 4px;
+    margin: 0;
+    position: absolute;
+  }
+
+  .close-search {
+    background: white url('./icons/arrow-back.svg');
+    width: 26px;
+    height: 26px;
+  }
+
+  #infoWindow h4 {
+    margin: 4px 10px;
+    font-size: 15px;
+/*    font-weight: 200;*/
+  }
+
+  #infoWindow p {
+    text-align: unset;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+}
+
+@media screen and (max-height: 1000px) {
+   #menu, .map-container {
+    height: 93vh;
+   }
+   .App-header{
+    height: 7vh;
+   }   
+}
+
+@media screen and (min-height: 1200px) {
+  #infoWindow {
+    height: 57%;
+  }
+}
