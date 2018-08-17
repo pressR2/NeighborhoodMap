@@ -12,29 +12,31 @@ class Menu extends React.Component {
         this.props.search(input);
     }
 
-
     render() {
         let list = [];
         for (let i = 0; i < this.props.places.length; i++) {
             var name = this.props.places[i].name;
-            let f = this.props.handleClick
+            let f = this.props.handleClick;
 
             list.push(
-            <li className = "list-item" key = {i} onClick={(function(title){
-                return function() {
-                        f(title)
-                }
-                })(this.props.places[i].title)}>
-                <Link to="/search">
-                    {name}
-                </Link>
-            </li>);
+                <li
+                    className="list-item"
+                    key={i}
+                    onClick={(function(title) {
+                        return function() {
+                            f(title);
+                        };
+                    })(this.props.places[i].title)}
+                >
+                    <Link to="/search">{name}</Link>
+                </li>
+            );
         }
 
         return (
             <section id="menu">
                 <h3 className="menu-title">Visit in Wroclaw</h3>
-                <input id="filter-location" type="text" placeholder="Filter location" aria-label="filter query"/>
+                <input id="filter-location" type="text" placeholder="Filter location" aria-label="filter query" />
                 <button className="filter" onClick={this.handleFilter}>
                     Filter
                 </button>
