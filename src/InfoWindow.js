@@ -22,9 +22,7 @@ class InfoWindow extends React.Component {
             this.props.filterQuery +
             "&prop=extracts&exintro=1&rvprop=content&format=json&formatversion=2&origin=*";
 
-        fetch(url,
-            {
-                headers: { Accept: "application/json" }            })
+        fetch(url)
             .then(function(response) {
                 return response.json();
             })
@@ -36,7 +34,7 @@ class InfoWindow extends React.Component {
                 }
             })
             .catch(err => {
-                console.log(err);
+                console.log("err: " + err);
                 let errorContent = <span>Wikipedia fetch error</span>;
                 this.setState({ content: errorContent });
             });
