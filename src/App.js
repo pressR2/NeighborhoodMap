@@ -10,34 +10,35 @@ import MediaQuery from "react-responsive";
 
 class App extends Component {
     constructor(props) {
-        super(props);
-        this.filterLocations = this.filterLocations.bind(this);
+        super(props);    
         this.filterSearch = this.filterSearch.bind(this);
-        this.handleShowInfoWindow = this.handleShowInfoWindow.bind(this);
+        this.setInfoWindowWikiTitle = this.setInfoWindowWikiTitle.bind(this);
     }
     state = {
         locations: data,
-        filterBy: "",
         infoWindowQuery: "",
         filteredLocations: data
     };
 
-    filterLocations(locationName) {
-        return this.state.locations.filter(location => location.name.includes(locationName) || locationName === "");
-    }
+    /* Set the locations to display in menu */
 
     filterSearch(filterQuery) {
-        let searchLocation = this.filterLocations(filterQuery);
+        let searchLocation = this.state.locations.filter(location => location.name.toUpperCase().includes(filterQuery.toUpperCase()) || filterQuery === "");
         this.setState({ filteredLocations: searchLocation });
     }
 
-    handleShowInfoWindow(title) {
+    /* Is used as a callback in children components */
+
+    setInfoWindowWikiTitle(title) {
         this.setState({
             infoWindowQuery: title
         });
     }
 
     render() {
+
+        /* Will be set inside MainView or as separate page depending on viewport size */
+
         let infoWindow = (
             <Route
                 path="/search"
@@ -45,7 +46,7 @@ class App extends Component {
                     return <InfoWindow filterQuery={this.state.infoWindowQuery} />;
                 }}
             />
-        );
+        ); 
 
         let mainViewWithInfo = (
             <Route
@@ -59,13 +60,13 @@ class App extends Component {
                             <Menu
                                 places={this.state.filteredLocations}
                                 search={this.filterSearch}
-                                handleClick={this.handleShowInfoWindow}
+                                handleClick={this.setInfoWindowWikiTitle}
                             />
                             {infoWindow}
                             <div className="map-container">
                                 <GoogleMaps
                                     places={this.state.filteredLocations}
-                                    handleClick={this.handleShowInfoWindow}
+                                    handleClick={this.setInfoWindowWikiTitle}
                                     animateMarker={this.state.infoWindowQuery}
                                 />
                             </div>
@@ -74,6 +75,7 @@ class App extends Component {
                 }}
             />
         );
+
 
         let mainView = (
             <Route
@@ -88,12 +90,12 @@ class App extends Component {
                             <Menu
                                 places={this.state.filteredLocations}
                                 search={this.filterSearch}
-                                handleClick={this.handleShowInfoWindow}
+                                handleClick={this.setInfoWindowWikiTitle}
                             />
                             <div className="map-container">
                                 <GoogleMaps
                                     places={this.state.filteredLocations}
-                                    handleClick={this.handleShowInfoWindow}
+                                    handleClick={this.setInfoWindowWikiTitle}
                                     animateMarker={this.state.infoWindowQuery}
                                 />
                             </div>
@@ -102,6 +104,9 @@ class App extends Component {
                 }}
             />
         );
+
+
+        /* Media Query from react-responsive */
 
         return (
             <div className="App">

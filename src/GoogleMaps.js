@@ -1,5 +1,10 @@
 import React from "react";
+
+/* Allows to use browser history */
+
 import { withRouter } from "react-router-dom";
+
+/* Don't load google script for the second time */
 
 let firstLoad = true;
 
@@ -11,35 +16,45 @@ class GoogleMaps extends React.Component {
 
     state = {
         markers: [],
-        map: {},
-        google: {}
+        map: {}
     };
 
+    /* Callback for google maps */
+
     initMap() {
-        this.setState({ google: window.google });
+
+        /* Create a new map passing an element to insert into */
+
         let newMap = new window.google.maps.Map(document.getElementById("map"), {
             center: { lat: 51.107885, lng: 17.038538 },
-            zoom: 13
+            zoom: 14
         });
 
         this.setState({
             map: newMap
         });
 
-        let newMarkers = [];
+        const newMarkers = [];
+
         let anim = window.google.maps.Animation.DROP;
+
         if (firstLoad === false) {
             anim = null;
         }
+
+        /* Create markers */
+
         for (let i = 0; i < this.props.places.length; i++) {
-            var position = this.props.places[i].location;
-            var marker = new window.google.maps.Marker({
-                position: position,
-                map: newMap,
-                title: this.props.places[i].name,
-                wikiQueryPart: this.props.places[i].title,
-                id: i,
-                animation: anim
+
+            /* Bind new markers to the map */
+
+            const marker = new window.google.maps.Marker({
+                    position: this.props.places[i].location,
+                    map: newMap,
+                    title: this.props.places[i].name,
+                    wikiQueryPart: this.props.places[i].title,
+                    id: i,
+                    animation: anim
             });
 
             newMarkers.push(marker);
@@ -48,16 +63,19 @@ class GoogleMaps extends React.Component {
                 markers: newMarkers
             });
 
-            let f = this.props.handleClick;
+            /* onclick - set the animation to bounce, open infoWindow */
+
+            let openInfoWindowCallback = this.props.handleClick;
             marker.addListener(
                 "click",
                 (function(marker, history) {
                     return function() {
-                        f(marker.wikiQueryPart);
-                        if (marker.getAnimation() !== null) {
-                        } else {
+
+                        openInfoWindowCallback(marker.wikiQueryPart);
+
+                        if (marker.getAnimation() == null) 
                             marker.setAnimation(window.google.maps.Animation.BOUNCE);
-                        }
+
                         setTimeout(function() {
                             marker.setAnimation(null);
                             history.push("/search");
@@ -66,7 +84,6 @@ class GoogleMaps extends React.Component {
                 })(marker, this.props.history)
             );
 
-            // this also works with react-router-native
         }
 
         firstLoad = false;
@@ -84,7 +101,9 @@ class GoogleMaps extends React.Component {
     componentDidUpdate(prevProps) {
         if (this.props.places !== prevProps.places) {
             this.state.markers.forEach(marker => {
-                var foundPlaces = this.props.places.filter(place => place.title === marker.wikiQueryPart);
+                const foundPlaces = this.props.places.filter(place => place.title === marker.wikiQueryPart);
+
+                /* If marker was not found in the places array, don't show it */
 
                 if (marker.map !== undefined) {
                     if (foundPlaces.length === 0 || foundPlaces === undefined) {
@@ -98,6 +117,9 @@ class GoogleMaps extends React.Component {
     }
 
     render() {
+
+        /* Bounce the currently selected marker */
+
         this.state.markers.filter(marker => marker.wikiQueryPart === this.props.animateMarker).forEach(marker => {
             marker.setAnimation(window.google.maps.Animation.BOUNCE);
             setTimeout(function() {
@@ -109,14 +131,16 @@ class GoogleMaps extends React.Component {
     }
 }
 
+/* Insert script into DOM */
+
 const loadScript = function(src) {
-    var tag = document.createElement("script");
+    const tag = document.createElement("script");
     tag.async = true;
     tag.src = src;
     tag.onerror = function() {
-        var map = document.getElementById("map");
+        const map = document.getElementById("map");
         if (map != null) {
-            var text = document.createTextNode("Google Maps error");
+            const text = document.createTextNode("Google Maps error");
             map.appendChild(text);
         }
     };

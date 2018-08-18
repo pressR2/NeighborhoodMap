@@ -7,16 +7,21 @@ class Menu extends React.Component {
         this.handleFilter = this.handleFilter.bind(this);
     }
 
+    /* Call search handler from parent */
+
     handleFilter() {
-        var input = document.getElementById("filter-location").value;
+        const input = document.getElementById("filter-location").value;
         this.props.search(input);
     }
 
     render() {
+
+        /* Generate location list entries */
+
         let list = [];
         for (let i = 0; i < this.props.places.length; i++) {
-            var name = this.props.places[i].name;
-            let f = this.props.handleClick;
+            const name = this.props.places[i].name;
+            let openInfoWindowCallback = this.props.handleClick;
 
             list.push(
                 <li
@@ -24,7 +29,7 @@ class Menu extends React.Component {
                     key={i}
                     onClick={(function(title) {
                         return function() {
-                            f(title);
+                            openInfoWindowCallback(title);
                         };
                     })(this.props.places[i].title)}
                 >
