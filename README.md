@@ -10,12 +10,12 @@ This application shows popular places to visit in Wroclaw. All locations are vis
 ### Requirements
 [Node.js](https://nodejs.org)
 ### Dependencies
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-[react-responsive](https://github.com/contra/react-responsive)
-[html-to-react](https://www.npmjs.com/package/html-to-react)
+* This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* [react-responsive](https://github.com/contra/react-responsive)
+* [html-to-react](https://www.npmjs.com/package/html-to-react)
 ### This application also uses
-[Google Maps API key](https://developers.google.com/maps/documentation/javascript/get-api-key)
-[Google Maps API](https://cloud.google.com/maps-platform/)
-[MediaWikiAPI for Wikipedia](https://www.mediawiki.org/wiki/API:Main_page)
+* [Google Maps API key](https://developers.google.com/maps/documentation/javascript/get-api-key)
+* [Google Maps API](https://cloud.google.com/maps-platform/)
+* [MediaWikiAPI for Wikipedia](https://www.mediawiki.org/wiki/API:Main_page)
 
 \#Hamburger and arrow-back icon from Udacity materials.
