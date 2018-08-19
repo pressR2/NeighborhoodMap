@@ -120,6 +120,11 @@ button {
   margin-top: 4px;
 }
 
+.close-search:hover {
+  background:#d9d9d9;
+  border-radius: 50%;
+}
+
 #infoWindow b {
   color:#0077b3;
 }

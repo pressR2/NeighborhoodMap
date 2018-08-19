@@ -24,7 +24,7 @@ class Menu extends React.Component {
             let openInfoWindowCallback = this.props.handleClick;
 
             list.push(
-                <li
+                <li role="link"
                     className="list-item"
                     key={i}
                     onClick={(function(title) {

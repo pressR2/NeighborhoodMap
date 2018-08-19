@@ -26,8 +26,8 @@ class GoogleMaps extends React.Component {
         /* Create a new map passing an element to insert into */
 
         let newMap = new window.google.maps.Map(document.getElementById("map"), {
-            center: { lat: 51.107885, lng: 17.038538 },
-            zoom: 14
+            center: { lat: 51.109990, lng: 17.053},
+            zoom: 13
         });
 
         this.setState({
@@ -91,6 +91,7 @@ class GoogleMaps extends React.Component {
 
     componentDidMount() {
         window.initMap = this.initMap;
+        window.gm_authFailure = handleError;
         if (firstLoad) {
             loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDWGkqpNu4mZAh80NZrhQnVsbAHxj-AzCE&callback=initMap");
         } else {
@@ -137,15 +138,19 @@ const loadScript = function(src) {
     const tag = document.createElement("script");
     tag.async = true;
     tag.src = src;
-    tag.onerror = function() {
-        const map = document.getElementById("map");
-        if (map != null) {
-            const text = document.createTextNode("Google Maps error");
-            map.appendChild(text);
-        }
-    };
+    tag.onerror = handleError
 
     document.getElementsByTagName("body")[0].appendChild(tag);
 };
+
+const handleError = function() {
+        const map = document.getElementById("map");
+        if (map != null) {         
+
+            const text = document.createTextNode("Google Maps couldn't load");
+            map.innerHTML = '';
+            map.appendChild(text);
+        }
+    }
 
 export default withRouter(GoogleMaps);
