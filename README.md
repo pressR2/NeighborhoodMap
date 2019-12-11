@@ -1,7 +1,7 @@
 # Neighborhood Map (React)
 Final project of the Front-End Web Developer Nanodegree with Udacity course. Main goal of this project is to continue learning with React framework and external APIs.
 ## How to use
-This application shows popular places to visit in Wroclaw. All locations are visible by clicking on hamburger menu icon in the left corner on the top of the page. You can choose a location directly from list view, or by typing name of chosen in input field to filter it. Clicking on interesting place either from menu list or map marker displays modal window where you can find out more about it. This short information is provided from Wikipedia article. The left arrow icon allows to close this window.
+This application shows popular places to visit in Wroclaw. All locations are visible by clicking on menu icon. You can choose directly from the list view, or by typing name of chosen location. Clicking on interesting place either from menu list or map markers shows short information from Wikipedia.
 ## How to deploy
 * To get started clone [repository](https://github.com/pressR2/NeighborhoodMap.git).
 * Install all project dependencies with `npm install`.
