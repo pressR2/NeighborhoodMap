@@ -80,10 +80,6 @@ button {
  text-decoration: none;
 }
 
-/* .list-item {
-  color: w#b0b5b7;
-} */
-
 #menu {
   z-index: 10;
   width: 252px;
@@ -147,14 +143,6 @@ button {
   margin: 10px 12px 0 12px;
 }
 
-footer {
-  background-color: #252831;
-  color: #b0b5b7;
-  text-align: center;
-  font-size: 13px;
-  margin-top: 10px;
-  padding: 6px;
-}
 
 /*========================Media Query========================*/
 @media screen and (min-width: 585px) {

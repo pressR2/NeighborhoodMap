@@ -55,12 +55,11 @@ class InfoWindow extends React.Component {
         const infoContent = (
             <aside id="infoWindow" tabIndex={0}>
                 <header className="infoHeader">
-                    <h4>Read more</h4>
+                    <h4>From Wikipedia</h4>
                     <Link className="close-search" to="/" aria-label="close info Window" />
                 </header>
                 <hr />
                 <article>{this.state.content}</article>
-                <footer>From Wikipedia</footer>
             </aside>
         );
 
