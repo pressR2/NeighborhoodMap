@@ -2,6 +2,9 @@
 The final project of the Front-End Web Developer Nanodegree with Udacity course. The main goal of this project is to continue learning with React framework and external APIs.
 ## How to use
 This application shows popular places to visit in Wroclaw. All locations are listed by clicking on the menu icon. You can choose directly from the list view, or filter by typing the name of the chosen location. Clicking on a place either from the menu list or map markers shows short information from Wikipedia.
+| The list of locations   | Selected location |
+|  :---:          |     :---:     |
+|![my screenshots](src/icons/Untitled14.PNG ) | ![my screenshots](src/icons/Untitled15.PNG )|
 ## How to deploy
 * To get started clone [repository](https://github.com/pressR2/NeighborhoodMap.git).
 * Install all project dependencies with `npm install`.
