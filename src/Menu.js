@@ -41,7 +41,7 @@ class Menu extends React.Component {
         return (
             <section id="menu">
                 <h3 className="menu-title">Visit in Wroclaw</h3>
-                <input id="filter-location" type="text" placeholder="Filter location" aria-label="filter query" />
+                <input id="filter-location" type="text" autoComplete="off" placeholder="Filter location" aria-label="filter query" />
                 <button className="filter" onClick={this.handleFilter}>
                     Filter
                 </button>
