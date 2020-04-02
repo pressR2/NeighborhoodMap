@@ -37,21 +37,23 @@ body {
 }
 
 .menu-title {
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: 1px;
   text-align: center;
-  padding: 5px 0 5px 0; 
+  padding: 5px 0; 
 }
 
 #filter-location {
   width: 70%;
   height: 25px;
   padding-left: 3px;
+  font-size: 15px;
 }
 
 .filter {
   height: 25px;
   width: 30%;
+  font-size: 15px;
 }
 
 input,
@@ -67,8 +69,9 @@ button {
   list-style-type: none;
   text-align: left;
   padding-left: 15px;
-  line-height: 2.9;
-  font-size: 16px;
+  line-height: 2.5;
+  font-size: 17.5px;
+  margin-top: 9px;
 }
 
 .list-item a:hover {
@@ -121,7 +124,6 @@ button {
 }
 
 .close-search:hover {
-  /*background:#d9d9d9;*/
  border-radius: 50%;
  box-shadow: 0px 1px 10px -1px rgba(0,0,0,0.75);
 }
@@ -140,7 +142,7 @@ button {
 
 #infoWindow p {
   text-align: justify;
-  margin: 10px 12px 0 12px;
+  margin: 10px 12px 0;
 }
 
 
@@ -150,7 +152,7 @@ button {
     bottom: 0;
     z-index: 10;
     width: 252px;
-    height: 47%;
+    height: 45%;
     overflow: auto;
     background: white;
     color: black;
@@ -165,17 +167,17 @@ button {
   }
 
   #infoWindow h4 {
-    font-size: 15px;
+    font-size: 17px;
     margin-bottom: 0;
     margin-top: 10px;
   }
 
   #infoWindow p {
     text-align: unset;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.4;
     margin-left: 7px;
-    margin-right: 4px;
+    margin-right: 7px;
   }
 }
 
