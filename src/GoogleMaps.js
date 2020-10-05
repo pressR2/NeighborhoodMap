@@ -93,7 +93,7 @@ class GoogleMaps extends React.Component {
         window.initMap = this.initMap;
         window.gm_authFailure = handleError;
         if (firstLoad) {
-            loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDWGkqpNu4mZAh80NZrhQnVsbAHxj-AzCE&callback=initMap");
+            loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDy23l7rZHBnYFCzZ9BUS0LkmyiXhrCTPg&callback=initMap");
         } else {
             this.initMap();
         }
