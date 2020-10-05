@@ -1,35 +1,35 @@
 [
     {
         "name": "Tumski Bridge",
-        "title":"Tumski_Bridge",
+        "title": "Tumski_Bridge",
         "location": {
             "lat": 51.114715,
             "lng": 17.042235
-        }    
+        }
     },
     {
         "name": "Zoological Garden",
-        "title":"Wroc%C5%82aw_Zoo",
+        "title": "Wroc%C5%82aw_Zoo",
         "location": {
             "lat": 51.104126,
             "lng": 17.074197
-        }  
+        }
     },
     {
         "name": "Centennial Hall",
         "title": "Centennial_Hall",
         "location": {
             "lat": 51.106869,
-            "lng": 17.077285 
-        }   
+            "lng": 17.077285
+        }
     },
     {
         "name": "Słodowa Island",
-        "title":"S%C5%82odowa_Island",
+        "title": "Wyspa_S%C5%82odowa",
         "location": {
-            "lat": 51.116109,
-            "lng": 17.03752
-        }      
+            "lat": 51.116142,
+            "lng": 17.037667
+        }
     },
     {
         "name": "Museum of Architecture",
@@ -37,7 +37,7 @@
         "location": {
             "lat": 51.109618,
             "lng": 17.042419
-        }        
+        }
     },
     {
         "name": "Grunwald Square",
@@ -45,7 +45,7 @@
         "location": {
             "lat": 51.111676,
             "lng": 17.06051
-        }       
+        }
     },
     {
         "name": "Racławice Panorama",
@@ -53,7 +53,7 @@
         "location": {
             "lat": 51.110129,
             "lng": 17.04463
-        }        
+        }
     },
     {
         "name": "Market Square",
@@ -61,6 +61,6 @@
         "location": {
             "lat": 51.109454,
             "lng": 17.031332
-        }       
+        }
     }
 ]
