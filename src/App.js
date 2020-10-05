@@ -5,7 +5,7 @@ import GoogleMaps from "./GoogleMaps";
 import Menu from "./Menu";
 import * as data from "./locations.json";
 import InfoWindow from "./InfoWindow";
-import { Route } from "react-router-dom";
+import { Route, BrowserRouter } from "react-router-dom";
 import MediaQuery from "react-responsive";
 
 class App extends Component {
@@ -109,14 +109,16 @@ class App extends Component {
         /* Media Query from react-responsive */
 
         return (
-            <div className="App">
-                <MediaQuery query="(min-device-width: 585px)">{mainViewWithInfo}</MediaQuery>
+            <BrowserRouter basename="/NeighborhoodMap">
+                <div className="App">
+                    <MediaQuery query="(min-device-width: 585px)">{mainViewWithInfo}</MediaQuery>
 
-                <MediaQuery query="(max-device-width: 584px)">
-                    {mainView}
-                    {infoWindow}
-                </MediaQuery>
-            </div>
+                    <MediaQuery query="(max-device-width: 584px)">
+                        {mainView}
+                        {infoWindow}
+                    </MediaQuery>
+                </div>
+            </BrowserRouter>
         );
     }
 }
