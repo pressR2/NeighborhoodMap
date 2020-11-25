@@ -7,9 +7,9 @@ This application shows popular places to visit in Wroclaw. All locations are lis
 |![my screenshots](src/icons/Untitled14.PNG ) | ![my screenshots](src/icons/Untitled15.PNG )|
 ## How to deploy
 * To get started clone [repository](https://github.com/pressR2/NeighborhoodMap.git).
+* Replace `<your GOOGLE MAPS API KEY HERE>` inside of `GoogleMaps.js` with your key.
 * Install all project dependencies with `npm install`.
 * Start the development server with `npm start`.
-* Application will be open in the browser at the `localhost:3000` address.
 ### Requirements
 [Node.js](https://nodejs.org)
 ### Dependencies
@@ -20,5 +20,7 @@ This application shows popular places to visit in Wroclaw. All locations are lis
 * [Google Maps API key](https://developers.google.com/maps/documentation/javascript/get-api-key)
 * [Google Maps API](https://cloud.google.com/maps-platform/)
 * [MediaWikiAPI for Wikipedia](https://www.mediawiki.org/wiki/API:Main_page)
+### Link to site
+https://pressr2.github.io/NeighborhoodMap/
 
 \#Hamburger and arrow-back icon from Udacity materials.
